@@ -1,0 +1,87 @@
+html, body{ 
+  margin: 10px 10px 20px 20px;
+}
+
+body {
+  background: linear-gradient(to bottom right, beige, pink);
+}
+
+.inline-block{
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  display: block;
+  font-family: monospace;
+}
+
+#hobby1{
+  display: inline-block;
+  margin: 20px 20px 10px 10px;
+}
+
+#hobby2{
+  display: inline-block;
+  margin: 20px 20px 10px 10px;
+}
+
+#hobby3{
+  display: inline-block;
+  margin: 20px 20px 10px 10px;
+}
+
+#cherryblossom{
+  margin-bottom: 50px;
+  text-align: center;
+  font-family: monospace;
+
+}
+
+p{
+  font-family: monospace;
+  text-align: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+#static-head{
+  position: sticky;
+}
+
+h1{
+  text-align: center;
+  font-family: "Bitcount Prop Single Ink";
+  font-size: xxx-large;
+}
+
+h2{
+  text-align: center;
+  text-transform: uppercase;
+}
+
+img{
+  margin: auto;
+  margin-bottom: 20px;
+  width: 60%;
+  height: auto;
+  display: block;
+}
+
+footer{
+  position: fixed;
+  bottom: 10px;
+  margin-top: auto;
+  width: 100%;
+  padding: 10px;
+  
+}
+
+.foot{
+  margin: auto;
+  padding: 10px;
+  background-color: #faedca;
+}
+
+#madewith{
+  text-align: center;
+
+}
