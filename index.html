@@ -1,73 +1,190 @@
-<!DOCTYPE HTML>
-
-
-<html>
- <head>
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="./styles.css">
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tenzin Choden Thinley</title>
+  <meta name="description" content="This is a portfolio of Tenzin Choden Thinley" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Single+Ink:wght@100..900&display=swap" rel="stylesheet">
-
- </head>
- <body>
-  <h1 id="static-head">Tenzin Choden Thinley</h1>
-  <hr>
-  <p> Hello! My name is Tenzin and I am from Bhutan. I am currently a junior studying Computer Science and Economics at Colby College. I am a big foodie and I love to do jigsaw puzzles. I also love listening to random podcasts. Recently I have been listening to Tech Stuff.</p>
-
-  <h2>My Hobbies</h2>
-  <hr>
-  <div class="inline-block">
-    <div id="hobby1">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-earbuds" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M6.825 4.138c.596 2.141-.36 3.593-2.389 4.117a4.4 4.4 0 0 1-2.018.054c-.048-.01.9 2.778 1.522 4.61l.41 1.205a.52.52 0 0 1-.346.659l-.593.19a.55.55 0 0 1-.69-.34L.184 6.99c-.696-2.137.662-4.309 2.564-4.8 2.029-.523 3.402 0 4.076 1.948zm-.868 2.221c.43-.112.561-.993.292-1.969-.269-.975-.836-1.675-1.266-1.563s-.561.994-.292 1.969.836 1.675 1.266 1.563m3.218-2.221c-.596 2.141.36 3.593 2.389 4.117a4.4 4.4 0 0 0 2.018.054c.048-.01-.9 2.778-1.522 4.61l-.41 1.205a.52.52 0 0 0 .346.659l.593.19c.289.092.6-.06.69-.34l2.536-7.643c.696-2.137-.662-4.309-2.564-4.8-2.029-.523-3.402 0-4.076 1.948m.868 2.221c-.43-.112-.561-.993-.292-1.969.269-.975.836-1.675 1.266-1.563s.561.994.292 1.969-.836 1.675-1.266 1.563"/>
-      </svg>
-      Listening to Podcasts
-    </div>
-
-    <div id="hobby2">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
-      <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
-      </svg> Reading fantasy books
-    </div>
-
-    <div id="hobby3">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fork-knife" viewBox="0 0 16 16">
-      <path d="M13 .5c0-.276-.226-.506-.498-.465-1.703.257-2.94 2.012-3 8.462a.5.5 0 0 0 .498.5c.56.01 1 .13 1 1.003v5.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5zM4.25 0a.25.25 0 0 1 .25.25v5.122a.128.128 0 0 0 .256.006l.233-5.14A.25.25 0 0 1 5.24 0h.522a.25.25 0 0 1 .25.238l.233 5.14a.128.128 0 0 0 .256-.006V.25A.25.25 0 0 1 6.75 0h.29a.5.5 0 0 1 .498.458l.423 5.07a1.69 1.69 0 0 1-1.059 1.711l-.053.022a.92.92 0 0 0-.58.884L6.47 15a.971.971 0 1 1-1.942 0l.202-6.855a.92.92 0 0 0-.58-.884l-.053-.022a1.69 1.69 0 0 1-1.059-1.712L3.462.458A.5.5 0 0 1 3.96 0z"/>    
-      </svg>
-      Cooking (Recently)
-    </div>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/styles.css" />
+  <script src="./static/js/blossoms.js" defer></script>
+</head>
+<body>
+<canvas id="blossoms" class="bg-canvas" aria-hidden="true"></canvas>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <img src="./static/images/logo.png" alt="Logo">
+      <strong>TCT</strong>
+    </a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="">Explore</a>
+      <a class="btn" href="./static/images/Resume.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
   </div>
+</header>
 
-  <h2> Favorite Website</h2>
-  <hr>
-  <p> This is my favorite website: <a href="https://unsplash.com/">Unsplash</a></p>
-
-  <h2>My Photo</h2>
-  <hr>
-  <div id="cherryblossom">
-    <img  src="./images/redd-francisco-Lm5rkxzgiFQ-unsplash.jpg" alt="Image of a skyscrapers"/>
-    Photo by <a href="https://unsplash.com/@reddfrancisco?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Redd Francisco</a> on <a href="https://unsplash.com/photos/cherry-blossom-trees-near-river-Lm5rkxzgiFQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-
-  </div>
+<main id="top">
+  <!-- Hero -->
   
-      
-
-
-
-  <footer>
-    <div class="foot">
-      <div id="madewith">Made With  
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-        </svg>  By Tenzin Choden
+  <section class="hero">
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <div class="container hero-inner">
+      <img class="avatar" src="static/images/logo.png" alt="Portrait">
+      <h1>Tenzin Choden Thinley</h1>
+      <p class="tagline">
+        Researcher • College Student • 
+        <span class="highlight">Aspiring Full-Stack Developer</span>
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn" href="#contact">Contact Me</a>
       </div>
 
+      <!-- Quick intro card -->
+      <div class="pixel card" style="max-width:850px">
+        <p>
+          Hi! I'm Tenzin, a Computer Science and Economics student at Colby College. I combine technical expertise with economic insight and a deep belief in the principles of Gross National Happiness.
+        </p>
+      </div>
     </div>
+  </section>
 
-  </footer>
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p>Recent things I have tinkered with.</p>
+      </div>
+
+      <div class="grid cards">
+        <article class="pixel card">
+          <h3>Reaction Timer</h3>
+          <p class="meta">VHDL</p>
+          <p>Implemented a programmable light display controlled by a state machine and ROM-stored instructions, structured across two main VHDL modules..</p>
+          <div class="tags">
+            <span class="tag">VHDL</span><span class="tag">StateMachine</span><span class="tag">Computer Architecture</span>
+          </div>
+          <p><a class="btn" href="https://github.com/tenzytaec26/Reaction-Timer" target="_blank" rel="noopener">Repo</a></p>
+        </article>
+
+        <article class="pixel card">
+          <h3>Handwriting Recognition</h3>
+          <p class="meta">Python • EDA • NumPy</p>
+          <p>Implemented an RBF Neural Network with K-Means clustering in Python for classification, featuring interactive visualization in Jupyter Notebook.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">RBFN</span><span class="tag">Pandas</span>
+          </div>
+          <p><a class="btn" href="#" target="_blank" rel="noopener">Repo</a></p>
+        </article>
+
+        <article class="pixel card">
+          <h3>Upcoming Blog-site</h3>
+          <p class="meta">HTML • CSS • JS</p>
+          <p>This is a website which provides a space for discussion and innovation.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+          </div>
+          <p><a class="btn" href="https://tenzytaec26.github.io/BCChats/" target="_blank" rel="noopener">Website</a></p>
+        </article>
+        <!-- Add more cards as needed -->
+      </div>
+
+      <p class="center" style="margin-top:1.5rem">
+        <a class="btn" href="projects.html">See all projects</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <h2>Experience</h2>
+        <p>Highlights of my work so far.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="pixel card">
+          <h3>NLP Research Assistant <span class="when">Feb 2025 – Present</span></h3>
+          <div class="where">INSITE Lab — service-focused projects for Blind and Visually Imparied People</div>
+          <p>• Developed an NLP pipeline using NLTK and spaCy to extract spatial language patterns, and conducted exploration
+analysis on linguistic patterns to support research on spreadsheet accessibility for blind/low-vision users</p>
+          <p>• Engineered and standardized 50+ interview transcripts (45-60 minutes each) using custom Python word parsers and
+Excel, ensuring data consistency and reproducibility, and collaborated with faculty to communicate technical results</p>
+        </div>
+        <br>
+        <div class="pixel card">
+          <h3>Data Analyst <span class="when">Sept 2022 – Jul 2023</span></h3>
+          <div class="where">The Royal Academy (DGI), Bhutan</div>
+          <p>• Authored 4 documentation pieces on educational advancements for the Bhutan Baccalaureate, conducting literature
+reviews, analyzing source materials, and synthesizing findings across 5+ documents and 5000+ datasets</p>
+          <p>• Led qualitative research by designing and conducting 25 in-depth interviews on well-being, applying thematic analysis
+to extract key patterns, and synthesizing findings into a multimedia video presentation delivered to 20-25 educators</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2>Skills & Tools</h2>
+        <p>What I use to ship quickly and reliably.</p>
+      </div>
+
+      <div class="grid cards">
+        <div class="pixel card">
+          <h3>Data Analysis</h3>
+          <div class="tags">
+            <span class="tag">R</span><span class="tag">SQL</span><span class="tag">Stata</span>
+            <span class="tag">scikit-learn</span><span class="tag">Excel</span><span class="tag">Matplotlib</span>
+          </div>
+        </div>
+        <div class="pixel card">
+          <h3>Backend</h3>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Excel</span><span class="tag">Stata</span> <span class="tag">Docker</span>
+          </div>
+        </div>
+        <div class="pixel card">
+          <h3>Frontend</h3>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Open to research, internships, and collabs.</p>
+      </div>
+
+      <div class="pixel card">
+        <p>Email: <a href="mailto:tenzincthinley@gmail.com">tenzincthinley@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/tenzin-choden-thinley-492438247/" target="_blank" rel="noopener">linkedin.com/in/you</a></p>
+        <p>GitHub: <a href="https://github.com/tenzytaec26" target="_blank" rel="noopener">github.com/you</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <small>© <span id="year"></span> Tenzin Choden Thinley. All rights reserved.</small>
+  </div>
+</footer
 </body>
-</html>
-
-
+</html
