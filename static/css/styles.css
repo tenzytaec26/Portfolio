@@ -70,7 +70,7 @@ a{
 }
 .btn:hover{ 
   transform: translateY(-2px); 
-  background: rgba(161, 118, 26, 0.1);
+  background: rgba(189, 138, 28, 0.2);
 }
 
 /* ===== Pixel Border & Cards ===== */
