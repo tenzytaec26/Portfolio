@@ -1,0 +1,172 @@
+/* ===== CSS Variables / Theme ===== */
+:root{
+  --bg: #F0eae5; 
+  --bg-2: #ada581;
+  --text: #8d6548;
+  --muted: #945600e2;
+  --accent: #190994d0;
+  --accent-2:#28096b;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --card: #e3c4938b;
+  --border: #b38042;
+  --maxw: 1200px;
+  --radius: 18px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --display: "Press Start 2P", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
+  --sans: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
+}
+
+/* ===== Base ===== */
+*{ box-sizing:border-box }
+html, body{
+  background: radial-gradient(1200px 800px at 10% -10%, #724f03 0%, transparent 35%),
+              radial-gradient(1200px 800px at 110% 10%, #5619c7 0%, transparent 35%),
+              var(--bg);
+  color: var(--text);
+  margin: 0;
+  font-family: var(--sans);
+  scroll-behavior: smooth;
+}
+img{ max-width:100%; display:block }
+a{ color: var(--accent) }
+.container{ width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px }
+
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;          
+  pointer-events: none;
+}
+
+/* ===== Utility ===== */
+.hidden{ display:none!important }
+.center{ text-align:center }
+.grid{ display:grid; gap: 1.25rem }
+.btn{
+  display:inline-flex; align-items:center; gap:.6rem;
+  padding:.8rem 1rem; border:2px solid var(--accent);
+  color:var(--text); text-decoration:none; font-weight:600;
+  border-radius: 10px; background: transparent;
+  transition:.2s transform ease, .2s background-color ease;
+}
+.btn:hover{ transform: translateY(-2px); background: rgba(194, 184, 163, 0.1) }
+
+/* ===== Pixel Border & Cards ===== */
+.pixel{
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow:
+     0 0 0 3px rgba(95, 12, 90, 0.415) inset,
+     0 10px 30px var(--shadow);
+  position: relative;
+  margin-bottom: 15px;
+}
+.pixel::after{
+  content:"";
+  position:absolute; inset:-6px;
+  border: 2px solid rgba(56,241,143,.35);
+  border-radius: calc(var(--radius) + 8px);
+  pointer-events:none;
+  filter: blur(1px);
+}
+
+/* ===== Header / Nav ===== */
+header{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(177, 143, 124, 0.9), rgba(240, 235, 229, 0.6));
+  /* border-bottom: 1px solid rgba(155,255,208,.2); */
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  height:64px;
+}
+.brand{ display:flex; align-items:center; gap:.75rem; font-family: var(--display) }
+.brand img{ width:36px; height:36px; border-radius:8px }
+nav a{
+  color:var(--text); text-decoration:none; padding:.5rem .75rem; border-radius:10px;
+}
+nav a:hover{ background: rgba(56,241,143,.12) }
+
+/* ===== Hero ===== */
+.hero{
+  position:relative; overflow:clip;
+  padding: 90px 0 60px;
+}
+#bg-canvas{
+  position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.5;
+}
+.hero-inner{ position:relative; z-index:1; display:grid; justify-items:center; gap:1rem }
+.hero .avatar{
+  width:92px; height:92px; border-radius:20px; border:2px solid var(--border);
+  box-shadow: 0 10px 25px var(--shadow);
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{ transform: translateY(0) }
+  50%{ transform: translateY(-6px) }
+}
+h1{
+  margin: .5rem 0 0;
+  font-family: var(--display); letter-spacing:.5px; font-size: clamp(26px, 4vw, 48px);
+  text-align:center;
+}
+.tagline{
+  margin: .25rem 0 1rem; font-size: clamp(14px,1.7vw,18px); color: var(--muted);
+}
+.highlight{
+  background: linear-gradient(90deg,var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip:text; color: transparent;
+  animation: shimmer 3s linear infinite;
+  background-size: 200% 100%;
+}
+@keyframes shimmer{
+  0%{ background-position: 0% 50% } 100%{ background-position: 200% 50% }
+}
+.hero-cta{ display:flex; gap:.75rem; flex-wrap:wrap; justify-content:center }
+
+/* ===== Sections ===== */
+section{ padding: 70px 0 }
+.section-head{
+  margin: 0 0 20px; display:flex; align-items:baseline; justify-content:space-between; gap:1rem;
+}
+.section-head h2{
+  font-family: var(--display); font-size: clamp(18px,2.6vw,28px);
+  margin:0;
+}
+.section-head p{ margin:0; color: var(--muted) }
+
+/* ===== Cards Grid ===== */
+.cards{
+  grid-template-columns: repeat( auto-fit, minmax(260px, 1fr) );
+}
+.card{
+  padding: 1.1rem; display:flex; flex-direction:column; gap:.6rem;
+}
+.card h3{ margin:.2rem 0 .35rem; font-size: 1rem }
+.card .meta{ color: var(--muted); font-size:.9rem }
+.card .tags{ display:flex; gap:.4rem; flex-wrap:wrap }
+.tag{
+  font-family: var(--mono); font-size:.72rem; padding:.25rem .5rem; border-radius:8px;
+  border:1px dashed rgba(102, 86, 182, 0.5); color: var(--accent-2); background: rgba(56,241,143,.08);
+}
+
+/* ===== Experience ===== */
+.timeline{ border-left:2px solid rgba(155,255,208,.35); padding-left:18px }
+.role{ margin: 0 0 22px }
+.role h3{ margin:.1rem 0 }
+.role .where{ color: var(--muted) }
+.role .when{ font-family: var(--mono); color: var(--accent-2); font-size:.85rem }
+
+/* ===== Footer ===== */
+footer{
+  padding: 40px 0 80px; color: var(--muted);
+  border-top:1px solid rgba(155,255,208,.2);
+  text-align:center;
+}
+
+/* ===== Responsiveness ===== */
+@media (max-width: 720px){
+  .section-head{ flex-direction:column; align-items:flex-start }
+}
