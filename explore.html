@@ -1,43 +1,99 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Explore | Tenzin Choden Thinley</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./static/css/styles.css" />
-</head>
-<body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="./index.html">
-        <img src="./static/images/logo.png" alt="Logo">
-        <strong>TCT</strong>
-      </a>
-      <nav>
-        <a href="./index.html#projects">Projects</a>
-        <a href="./index.html#experience">Experience</a>
-        <a href="./index.html#contact">Contact</a>
-        <a href="./2D/" target="_blank" rel="noopener">Open Game</a>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore – Tenzin Choden Thinley</title>
+    <link rel="stylesheet" href="./static/css/styles.css" />
 
-  <!-- Use either dev or prod iframe src (see sections above) -->
-  <main style="margin:0; height:90vh;">
-    <iframe
-      src="./2D/index.html"
-      title="Explore Game"
-      style="border:none; width:100%; height:100%;">
-    </iframe>
-  </main>
+    <style>
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
 
-  <footer>
-    <div class="container">
-      <small>© <span id="year"></span> Tenzin Choden Thinley. All rights reserved.</small>
-    </div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</body>
+      .game-embed {
+        position: relative;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      /* Responsive 16:9 embed */
+      #solo-sprint-frame {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: 0;
+        background: #000; /* prevents white flash while loading */
+      }
+
+      .game-actions {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+
+      .game-btn {
+        padding: 0.6rem 0.9rem;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        background: #f7f7f7;
+      }
+
+      .game-btn:hover {
+        filter: brightness(0.95);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ========== MAIN SECTION ========== -->
+    <section id="playground" class="container">
+      <h2>Play: Solo Sprint 2D</h2>
+
+      <div class="game-embed">
+        <iframe
+          id="solo-sprint-frame"
+          src="game/2D/index.html"
+          loading="lazy"
+          allow="fullscreen; gamepad"
+          allowfullscreen
+          referrerpolicy="no-referrer"
+        ></iframe>
+
+        <div class="game-actions">
+          <button id="game-fullscreen" class="game-btn">Fullscreen</button>
+          <a
+            class="game-btn"
+            href="game/2D/index.html"
+            target="_blank"
+            rel="noopener"
+            >Open in new tab</a
+          >
+        </div>
+      </div>
+
+      <noscript>
+        Your browser has JavaScript disabled. You can open the game
+        <a href="game/2D/index.html" target="_blank" rel="noopener"
+          >in a new tab</a
+        >.
+      </noscript>
+    </section>
+
+    <script>
+      (function () {
+        const frame = document.getElementById("solo-sprint-frame");
+        document
+          .getElementById("game-fullscreen")
+          ?.addEventListener("click", () => {
+            if (frame.requestFullscreen) frame.requestFullscreen();
+            else if (frame.webkitRequestFullscreen)
+              frame.webkitRequestFullscreen();
+            else alert("Fullscreen not supported in this browser.");
+          });
+      })();
+    </script>
+  </body>
 </html>
