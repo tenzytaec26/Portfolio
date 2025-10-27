@@ -1,99 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Explore – Tenzin Choden Thinley</title>
-    <link rel="stylesheet" href="./static/css/styles.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tenzin Choden Thinley</title>
+  <meta name="description" content="This is a portfolio of Tenzin Choden Thinley" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/styles.css" />
+  <script src="./static/js/blossoms.js" defer></script>
+</head>
+<canvas id="blossoms" class="bg-canvas" aria-hidden="true"></canvas>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <img src="./static/images/logo.png" alt="Logo">
+      <strong>TCT</strong>
+    </a>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <a href="./2D/" target="_blank" rel="noopener">Explore</a>
+      <a class="btn" href="./static/images/Resume.pdf" target="_blank" rel="noopener">Download CV</a>
+    </nav>
+  </div>
+</header>
 
-    <style>
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 1rem;
-      }
-
-      .game-embed {
-        position: relative;
-        display: grid;
-        gap: 0.75rem;
-      }
-
-      /* Responsive 16:9 embed */
-      #solo-sprint-frame {
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        border: 0;
-        background: #000; /* prevents white flash while loading */
-      }
-
-      .game-actions {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-      }
-
-      .game-btn {
-        padding: 0.6rem 0.9rem;
-        border: 1px solid #ccc;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        background: #f7f7f7;
-      }
-
-      .game-btn:hover {
-        filter: brightness(0.95);
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- ========== MAIN SECTION ========== -->
-    <section id="playground" class="container">
-      <h2>Play: Solo Sprint 2D</h2>
-
-      <div class="game-embed">
-        <iframe
-          id="solo-sprint-frame"
-          src="game/2D/index.html"
-          loading="lazy"
-          allow="fullscreen; gamepad"
-          allowfullscreen
-          referrerpolicy="no-referrer"
-        ></iframe>
-
-        <div class="game-actions">
-          <button id="game-fullscreen" class="game-btn">Fullscreen</button>
-          <a
-            class="game-btn"
-            href="game/2D/index.html"
-            target="_blank"
-            rel="noopener"
-            >Open in new tab</a
-          >
-        </div>
+<main id="top">
+  <!-- Hero -->
+  
+  <section class="hero">
+    <div class="container hero-inner">
+      <img class="avatar" src="static/images/logo.png" alt="Portrait">
+      <h1>Tenzin Choden Thinley</h1>
+      <p class="tagline">
+        Researcher • College Student • 
+        <span class="highlight">Aspiring Full-Stack Developer</span>
+      </p>
+      <div class="hero-cta">
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn" href="#contact">Contact Me</a>
       </div>
 
-      <noscript>
-        Your browser has JavaScript disabled. You can open the game
-        <a href="game/2D/index.html" target="_blank" rel="noopener"
-          >in a new tab</a
-        >.
-      </noscript>
-    </section>
+      <!-- Quick intro card -->
+      <div class="pixel card" style="max-width:850px">
+        <p>
+          If you are free, do checkout this game that I designed. <a href="https://tenzytaec26.github.io/Portfolio-Game/">My Land</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      (function () {
-        const frame = document.getElementById("solo-sprint-frame");
-        document
-          .getElementById("game-fullscreen")
-          ?.addEventListener("click", () => {
-            if (frame.requestFullscreen) frame.requestFullscreen();
-            else if (frame.webkitRequestFullscreen)
-              frame.webkitRequestFullscreen();
-            else alert("Fullscreen not supported in this browser.");
-          });
-      })();
-    </script>
-  </body>
+  
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Open to research, internships, and collabs.</p>
+      </div>
+
+      <div class="pixel card">
+        <p>Email: <a href="mailto:tenzincthinley@gmail.com">tenzincthinley@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/tenzin-choden-thinley-492438247/" target="_blank" rel="noopener">linkedin.com/in/you</a></p>
+        <p>GitHub: <a href="https://github.com/tenzytaec26" target="_blank" rel="noopener">github.com/you</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <small>© <span id="year"></span> Tenzin Choden Thinley. All rights reserved.</small>
+  </div>
+</footer>
 </html>
